@@ -20,7 +20,7 @@ public class ConnFactory {
 	
 	public Connection getConnection() {
 		Connection conn = null;
-		String url= "jdbc:oracle:thin:@:1521:ORCL";
+		String url= "jdbc:oracle:thin:@trms.cfsinz7mypos.us-east-2.rds.amazonaws.com:1521:ORCL";
 		String user = "trms";
 		String password = "AlexAnya_2";
 		try {

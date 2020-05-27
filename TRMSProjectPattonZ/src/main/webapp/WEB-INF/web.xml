@@ -9,4 +9,34 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>LoginServlet</display-name>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>com.revature.servlet.LoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/Login</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>EmployeePageServlet</display-name>
+    <servlet-name>EmployeePageServlet</servlet-name>
+    <servlet-class>com.revature.servlet.EmployeePageServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EmployeePageServlet</servlet-name>
+    <url-pattern>/EmployeePage</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>TRMSFormServlet</display-name>
+    <servlet-name>TRMSFormServlet</servlet-name>
+    <servlet-class>com.revature.servlet.TRMSFormServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>TRMSFormServlet</servlet-name>
+    <url-pattern>/TRMSForm</url-pattern>
+  </servlet-mapping>
 </web-app>

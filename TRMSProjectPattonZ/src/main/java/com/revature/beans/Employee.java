@@ -1,6 +1,6 @@
 package com.revature.beans;
 
-public class EmployeeBeans {
+public class Employee {
 
 	private int emp_id;
 	private String name_first;
@@ -11,11 +11,11 @@ public class EmployeeBeans {
 	private double avail_reim;
 	
 	
-	public EmployeeBeans() {
+	public Employee() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public EmployeeBeans(int emp_id, String name_first, String name_last, String email, String user_name,
+	public Employee(int emp_id, String name_first, String name_last, String email, String user_name,
 			String pass_word, double avail_reim) {
 		super();
 		this.emp_id = emp_id;
@@ -70,7 +70,7 @@ public class EmployeeBeans {
 	}
 	@Override
 	public String toString() {
-		return "EmployeeBeans [emp_id=" + emp_id + ", name_first=" + name_first + ", name_last=" + name_last
+		return "Employee [emp_id=" + emp_id + ", name_first=" + name_first + ", name_last=" + name_last
 				+ ", email=" + email + ", user_name=" + user_name + ", pass_word=" + pass_word + ", avail_reim="
 				+ avail_reim + "]";
 	}
