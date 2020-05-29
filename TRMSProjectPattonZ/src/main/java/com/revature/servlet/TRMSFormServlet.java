@@ -40,19 +40,31 @@ public class TRMSFormServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("in doPost");
+		response.setContentType("text/html");
+		PrintWriter pw = response.getWriter();
 		TRMSForm trmsform = null;
 		ObjectMapper mapper = new ObjectMapper();
 		trmsform = mapper.readValue(request.getInputStream(), TRMSForm.class);
-		System.out.println(trmsform);
+//		int a = Integer.parseInt(request.getParameter("emp_id"));
+//		System.out.println(a);
+//		String b = request.getParameter("name_first");
+//		String c = request.getParameter("name_last");
+//		String d = request.getParameter("email");
+//		String e = request.getParameter("course_title");
+//		String f = request.getParameter("course_type");
+//		String g = request.getParameter("course_start_date");
+//		String h = request.getParameter("course_location");
+//		int i = Integer.parseInt(request.getParameter("course_cost"));
+//		String j = request.getParameter("grade_format");
+//		String k = request.getParameter("min_grade");
 		TRMSFormDAOImpl tfdi = new TRMSFormDAOImpl();
 		try {
-			tfdi.insertForm(trmsform);
-			PrintWriter pw = response.getWriter();
+			tfdi.makeRequest(trmsform);
 			pw.write("<h3> Submitted TRMS request. Please allow time before approval</h3>");
 			pw.close();
-		} catch (SQLException e) {
+		} catch (SQLException z) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			z.printStackTrace();
 		}
 		
 	}

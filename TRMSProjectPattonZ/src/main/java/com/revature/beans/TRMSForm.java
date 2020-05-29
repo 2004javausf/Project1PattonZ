@@ -1,6 +1,5 @@
 package com.revature.beans;
 
-import java.sql.Date;
 
 public class TRMSForm {
 	private int form_id;
@@ -10,12 +9,13 @@ public class TRMSForm {
 	private String email;
 	private String course_title;
 	private String course_type;
-	private Date course_start_date;
+	private String course_start_date;
 	private String course_location;
 	private int course_cost;
 	private String grade_format;
 	private String min_grade;
 	private String add_doc;
+	private String final_grade;
 	private String sup_appden;
 	private String dh_appden;
 	private String benco_appden;
@@ -29,9 +29,9 @@ public class TRMSForm {
 	
 	
 	public TRMSForm(int form_id, int emp_id, String name_first, String name_last, String email, String course_title,
-			String course_type, Date course_start_date, String course_location, int course_cost, String grade_format,
+			String course_type, String course_start_date, String course_location, int course_cost, String grade_format,
 			String min_grade, String add_doc, String sup_appden, String dh_appden, String benco_appden,
-			double reim_amount) {
+			double reim_amount, String final_grade) {
 		super();
 		this.form_id = form_id;
 		this.emp_id = emp_id;
@@ -46,10 +46,21 @@ public class TRMSForm {
 		this.grade_format = grade_format;
 		this.min_grade = min_grade;
 		this.add_doc = add_doc;
+		this.final_grade = final_grade;
 		this.sup_appden = sup_appden;
 		this.dh_appden = dh_appden;
 		this.benco_appden = benco_appden;
 		this.reim_amount = reim_amount;
+	}
+
+
+	public String getFinal_grade() {
+		return final_grade;
+	}
+
+
+	public void setFinal_grade(String final_grade) {
+		this.final_grade = final_grade;
 	}
 
 
@@ -95,10 +106,10 @@ public class TRMSForm {
 	public void setCourse_type(String course_type) {
 		this.course_type = course_type;
 	}
-	public Date getCourse_start_date() {
+	public String getCourse_start_date() {
 		return course_start_date;
 	}
-	public void setCourse_start_date(Date course_start_date) {
+	public void setCourse_start_date(String course_start_date) {
 		this.course_start_date = course_start_date;
 	}
 	public String getCourse_location() {
@@ -155,15 +166,18 @@ public class TRMSForm {
 	public void setReim_amount(double reim_amount) {
 		this.reim_amount = reim_amount;
 	}
+
+
 	@Override
 	public String toString() {
 		return "TRMSForm [form_id=" + form_id + ", emp_id=" + emp_id + ", name_first=" + name_first + ", name_last="
 				+ name_last + ", email=" + email + ", course_title=" + course_title + ", course_type=" + course_type
 				+ ", course_start_date=" + course_start_date + ", course_location=" + course_location + ", course_cost="
 				+ course_cost + ", grade_format=" + grade_format + ", min_grade=" + min_grade + ", add_doc=" + add_doc
-				+ ", sup_appden=" + sup_appden + ", dh_appden=" + dh_appden + ", benco_appden=" + benco_appden
-				+ ", reim_amount=" + reim_amount + "]";
+				+ ", final_grade=" + final_grade + ", sup_appden=" + sup_appden + ", dh_appden=" + dh_appden
+				+ ", benco_appden=" + benco_appden + ", reim_amount=" + reim_amount + "]";
 	}
+
 	
 
 
