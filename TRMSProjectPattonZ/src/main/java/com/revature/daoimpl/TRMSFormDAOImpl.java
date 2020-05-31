@@ -2,9 +2,12 @@ package com.revature.daoimpl;
 
 import java.sql.CallableStatement;
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.revature.beans.TRMSForm;
 import com.revature.dao.TRMSFormDAO;
@@ -54,6 +57,46 @@ public class TRMSFormDAOImpl implements TRMSFormDAO {
 		call.setString(11, trmsform.getMin_grade());
 		call.executeUpdate();
 	}
+	@Override
+	public void uploadGrade(TRMSForm trmsform) throws SQLException {
+		Connection conn = cf.getConnection();
+		String sql = "UPDATE TRMSFORM SET FINAL_GRADE=(?) WHERE FORM_ID=(?)";
+		PreparedStatement ps = conn.prepareStatement(sql);
+		ps.setString(1, trmsform.getFinal_grade());
+		ps.setInt(2, trmsform.getForm_id());
+		ps.executeUpdate();
+	}
+	@Override
+	public List<TRMSForm> selectFormByEmp(int emp_id) throws SQLException {
+		List<TRMSForm> trmsformlist = new ArrayList<TRMSForm>();
+		TRMSForm trmsform = null;
+		Connection conn = cf.getConnection();
+		Statement stmt = conn.createStatement();
+		ResultSet rs =stmt.executeQuery("SELECT * FROM TRMSFORM WHERE EMP_ID=" + emp_id);
+		while(rs.next()){
+			trmsform = new TRMSForm(rs.getInt(1), rs.getInt(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7), rs.getString(8), rs.getString(9), rs.getInt(10), rs.getString(11), rs.getString(12), rs.getString(13), rs.getString(14), rs.getString(14), rs.getString(16), rs.getString(17), rs.getDouble(18));
+			trmsformlist.add(trmsform);
+		}
+		return trmsformlist;
+	}
+	@Override
+	public void uploadAddDoc(TRMSForm trmsform) throws SQLException {
+		Connection conn = cf.getConnection();
+		String sql = "UPDATE TRMSFORM SET ADD_DOC=(?) WHERE FORM_ID=(?)";
+		PreparedStatement ps = conn.prepareStatement(sql);
+		ps.setString(1, trmsform.getAdd_doc());
+		ps.setInt(2, trmsform.getForm_id());
+		ps.executeUpdate();
+		
+	}
+	@Override
+	public void cancelRequest(TRMSForm trmsform) throws SQLException {
+		Connection conn = cf.getConnection();
+		String sql = "DELETE FROM TRMSFORM WHERE FORM_ID = (?)";
+		PreparedStatement ps = conn.prepareStatement(sql);
+		ps.setInt(1, trmsform.getForm_id());
+		ps.executeUpdate();
+		
+	}
 
 }
-

@@ -39,4 +39,54 @@
     <servlet-name>TRMSFormServlet</servlet-name>
     <url-pattern>/TRMSForm</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ULGradeServlet</display-name>
+    <servlet-name>ULGradeServlet</servlet-name>
+    <servlet-class>com.revature.servlet.ULGradeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ULGradeServlet</servlet-name>
+    <url-pattern>/ULGrade</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AddDocServlet</display-name>
+    <servlet-name>AddDocServlet</servlet-name>
+    <servlet-class>com.revature.servlet.AddDocServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddDocServlet</servlet-name>
+    <url-pattern>/AddDoc</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DeleteRequestServlet</display-name>
+    <servlet-name>DeleteRequestServlet</servlet-name>
+    <servlet-class>com.revature.servlet.DeleteRequestServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteRequestServlet</servlet-name>
+    <url-pattern>/DeleteRequest</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SupervisorLoginServlet</display-name>
+    <servlet-name>SupervisorLoginServlet</servlet-name>
+    <servlet-class>com.revature.servlet.SupervisorLoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SupervisorLoginServlet</servlet-name>
+    <url-pattern>/SupervisorLogin</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>GetAllRequestServlet</display-name>
+    <servlet-name>GetAllRequestServlet</servlet-name>
+    <servlet-class>com.revature.servlet.GetAllRequestServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GetAllRequestServlet</servlet-name>
+    <url-pattern>/GetAllRequest</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -47,3 +47,5 @@ END;
 EXECUTE MAKEREQUEST(1, 'Zach', 'Patton', 'zacharypatton1991@gmail.com', 'RevPro', 'Software DevOp', '04-JULY-2020', 'Online', 200, 'Pass/Fail', 'Pass'); 
 
 ALTER SESSION SET NLS_DATE_FORMAT = 'MM-DD-YYYY';
+
+SELECT FORM_ID, COURSE_TITLE FROM TRMSFORM WHERE EMP_ID=1;

@@ -30,8 +30,8 @@ public class TRMSForm {
 	
 	public TRMSForm(int form_id, int emp_id, String name_first, String name_last, String email, String course_title,
 			String course_type, String course_start_date, String course_location, int course_cost, String grade_format,
-			String min_grade, String add_doc, String sup_appden, String dh_appden, String benco_appden,
-			double reim_amount, String final_grade) {
+			String min_grade, String add_doc, String final_grade, String sup_appden, String dh_appden, String benco_appden,
+			double reim_amount) {
 		super();
 		this.form_id = form_id;
 		this.emp_id = emp_id;

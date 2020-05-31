@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Upload a grade to your form(s)</title>
+</head>
+<body>
+    <div>
+        <p>Please enter your employee id</p>
+        <br>
+        <input type="number" id="emp_id">
+        <input type = "submit" value = "Employee ID" id = "formsRequest"/> 
+    </div>
+    <div id= "formtable">
+    </div>
+    <br>
+    <br>
+    <div>
+        <form enctype="application/json" method="POST" id="uploadgrade">
+            TRMS Form ID: <input type="text" name="form_id">
+            <br>
+            Final Grade: <input type="text" name="final_grade">
+            <input type="submit" name="submit" id="formsubmit">
+        </form>
+    </div>
+    <br>
+    <br>
+    <div>
+        Return to employee home screen <a href="employee.html"><button>Return</button></a>
+    </div>
+    <script type="text/javascript" src = "trms1.js"></script>
+</body>
+</html>

@@ -2,7 +2,7 @@ package com.revature.test;
 
 import java.sql.SQLException;
 
-import com.revature.daoimpl.TRMSFormDAOImpl;
+import com.revature.daoimpl.LoginDAOImpl;
 
 public class TestStuff {
 	public static void main(String[] args) {
@@ -13,8 +13,16 @@ public class TestStuff {
 //			// TODO Auto-generated catch block
 //			e.printStackTrace();
 //		}
-		String b = "12";
-		int a = Integer.parseInt(b);
-		System.out.println(a);
+//		String b = "12";
+//		int a = Integer.parseInt(b);
+//		System.out.println(a);
+		
+		LoginDAOImpl ldi = new LoginDAOImpl();
+		try {
+			System.out.println(ldi.getSupervisorList());
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }

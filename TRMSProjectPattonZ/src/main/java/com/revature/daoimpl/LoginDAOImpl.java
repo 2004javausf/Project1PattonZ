@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.revature.beans.Employee;
+import com.revature.beans.Supervisor;
 import com.revature.dao.LoginDAO;
 import com.revature.util.ConnFactory;
 
@@ -26,4 +27,19 @@ public class LoginDAOImpl implements LoginDAO {
 		}
 		return employeeList;
 	}
+	@Override
+	public List<Supervisor> getSupervisorList() throws SQLException {
+		List<Supervisor> supervisorList = new ArrayList<Supervisor>();
+		Connection conn = cf.getConnection();
+		Statement stmt = conn.createStatement();
+		ResultSet rs = stmt.executeQuery("SELECT * FROM SUPERVISOR");
+		Supervisor s = null;
+		while(rs.next()) {
+			s = new Supervisor (rs.getString(1), rs.getString(2));
+			supervisorList.add(s);
+		}
+		return supervisorList;
+	}
+	
+	
 }

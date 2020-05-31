@@ -1,8 +1,7 @@
 window.onload = function() {
     console.log("in onload");
-    document.getElementById("trmsFormSub").addEventListener("click", createFormRequest, false);
     document.getElementById("formsRequest").addEventListener("click", getYourForms, false);
-
+    document.getElementById("formsubmit").addEventListener("click", cancelRequest, false);
 }
 
 function getYourForms(){
@@ -69,30 +68,42 @@ function CreateTableFromJSON(howdy) {
 }
 
 
-/////////
-function jsonBuilder(){
-    var elements = document.getElementById("trmsform").elements;
-    var obj = {};
-    for(var i = 0; i<elements.length-1; i++){
-        var item=elements.item(i);
-        obj[item.name]=item.value;
-        console.log(obj);
-        }
-    var json=JSON.stringify(obj);
-    console.log(json);
-    return json
+function areYouSure(){
+    document.getElementById("ays").innerHTML = "Are you sure?";
+    document.getElementById("yes").innerHTML = `<button onclick= "cancel(0)">Yes</button>`;
+    document.getElementById("no").innerHTML = `<a href="cancelrequest.html"><button onclick= "cancel(1)">No</button></a>`;
 }
 
-function createFormRequest(){
-    console.log("in createFormRequest");
-    var xhr= new XMLHttpRequest();
-    xhr.onreadystatechange = function(){
-        console.log("in ORSC " +xhr.readyState);
-        if(xhr.readyState==4 && xhr.status==200){
-            console.log(xhr.responseText);
-        }
+function cancel(die){
+    if(die==0){
+        console.log("yes works");
+        cancelRequest();
     }
-    xhr.open("POST", `http://localhost:8080/TRMSProjectPattonZ/TRMSForm`, true);
-    var payload = jsonBuilder();
-    xhr.send(payload);
-	}
+}
+
+function jsonBuilder(){
+            var elements=document.getElementById("cancelrequest").elements;
+            var obj = {};
+            for(var i = 0; i<elements.length-1; i++){
+                var item=elements.item(i);
+                obj[item.name]=item.value;
+                console.log(obj);
+            }
+            var json=JSON.stringify(obj);
+            console.log(json);
+            return json;
+        }
+        
+        function cancelRequest(){
+            console.log("in cancelrequest");
+            var xhr= new XMLHttpRequest();
+            xhr.onreadystatechange = function(){
+                console.log("in ORSC " +xhr.readyState);
+                if(xhr.readyState==4 && xhr.status==200){
+                    console.log(xhr.responseText);
+                }
+            }
+            xhr.open("POST", `http://localhost:8080/TRMSProjectPattonZ/DeleteRequest`, true);
+            var payload = jsonBuilder();
+            xhr.send(payload);
+        }

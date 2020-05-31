@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+    <div>
+        <p>Please enter your employee id</p>
+        <br>
+        <input type="number" id="emp_id">
+        <input type = "submit" value = "Employee ID" id = "formsRequest"/> 
+    </div>
+    <div id= "formtable">
+    </div>
+    <br>
+    <br>
+    <div>
+        <p>Enter Form ID of the TRMS form that you wish to delete</p>
+        <p>CAN NOT BE UNDONE</p>
+        <form enctype="application/json" method="POST" id="cancelrequest">
+            TRMS Form ID: <input type="text" name="form_id">
+            <br>
+            <input type="submit" name="submit" id="formsubmit">
+        </form> 
+        
+    </div>
+    <div>
+        <p id="ays"></p>
+        <p id="yes"></p>
+        <p id="no"></p>
+    </div>
+    <br>
+    <br>
+    <div>
+        Return to employee home screen <a href="employee.html"><button>Return</button></a>
+    </div>
+    <script type="text/javascript" src= "cancelrequest.js"></script>
+</body>
+</html>
