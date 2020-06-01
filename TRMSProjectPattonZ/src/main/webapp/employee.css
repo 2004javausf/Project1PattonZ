@@ -1,16 +1,17 @@
 body{
-    background-color: darkorange;
+    background-color: purple;
 }
 
-h1.a{
-    color: Gray;
-    border: black;
+h1{
+    color: orange;
+    border: 1px solid black;
 }
 
-h2.b{
-    color: purple;
+h2{
+    color: orange;
 }
 
-div.empTotal{
-    border: rebeccapurple;
+div{
+    color: orange;
+    border: 2px solid orange;
 }
