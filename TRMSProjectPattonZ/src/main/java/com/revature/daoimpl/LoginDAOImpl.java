@@ -7,6 +7,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.revature.beans.BenCo;
+import com.revature.beans.Dephead;
 import com.revature.beans.Employee;
 import com.revature.beans.Supervisor;
 import com.revature.dao.LoginDAO;
@@ -39,6 +41,32 @@ public class LoginDAOImpl implements LoginDAO {
 			supervisorList.add(s);
 		}
 		return supervisorList;
+	}
+	@Override
+	public List<Dephead> getDepheadList() throws SQLException {
+		List<Dephead> depheadList = new ArrayList<Dephead>();
+		Connection conn = cf.getConnection();
+		Statement stmt = conn.createStatement();
+		ResultSet rs = stmt.executeQuery("SELECT * FROM DEPHEAD");
+		Dephead d = null;
+		while(rs.next()) {
+			d = new Dephead(rs.getString(1), rs.getString(2));
+			depheadList.add(d);
+		}
+		return depheadList;
+	}
+	@Override
+	public List<BenCo> getBenCoList() throws SQLException {
+		List<BenCo> bencoList = new ArrayList<BenCo>();
+		Connection conn = cf.getConnection();
+		Statement stmt = conn.createStatement();
+		ResultSet rs = stmt.executeQuery("SELECT * FROM BENCO");
+		BenCo bc = null;
+		while(rs.next()) {
+			bc = new BenCo(rs.getString(1), rs.getString(2));
+			bencoList.add(bc);
+		}
+		return bencoList;
 	}
 	
 	

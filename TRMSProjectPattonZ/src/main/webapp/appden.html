@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+    <div>
+        <h2>Approve or Deny Requests</h2>
+    </div>
+    <form enctype="application/json" method="POST" id="appdenform">
+        TRMS Form ID: <input type="text" name="form_id">
+        <br>
+        Approve or Deny:<select name="sup_appden">
+                            <option value="Approve">Approve</option>
+                            <option value="Denied">Denied</option>
+                        </select>
+        <br>
+        <input type="submit" name="submit" id="formsubmit">   
+    </form>
+    <br>
+    Return to View Request <a href="viewrequests.html"><button>View Requests</button></a>
+    <br>
+    <br>
+    Return to Supervisor Menu <a href="supervisor.html"><button>Return</button></a>
+
+    <script type="text/javascript" src="supappden.js"></script>
+</body>
+</html>

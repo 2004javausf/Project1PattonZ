@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+    <div>
+        <h2>Approve or Deny Requests</h2>
+    </div>
+    <form enctype="application/json" method="POST" id="appdenform">
+        TRMS Form ID: <input type="text" name="form_id">
+        <br>
+        Approve or Deny:<select name="benco_appden">
+                            <option value="Approve">Approve</option>
+                            <option value="Denied">Denied</option>
+                        </select>
+        <br>
+        <input type="submit" name="submit" id="formsubmit">   
+    </form>
+    <br>
+    Return to View Request <a href="bcviewreq.html"><button>View Requests</button></a>
+    <br>
+    <div>
+        Approve Final funding <a href="approvefunding.html"><button>Proceed</button></a>
+    </div>
+    <br>
+    <div>
+    Return to Benefits Coordinator Menu <a href="benco.html"><button>Return</button></a>
+    </div>
+    <script type="text/javascript" src="bcappden.js"></script>
+</body>
+</html>

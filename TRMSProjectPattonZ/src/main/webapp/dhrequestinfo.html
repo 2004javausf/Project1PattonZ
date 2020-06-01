@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+    <div>
+        <h2>Request additional information</h2>
+    </div>
+    <br>
+    <br>
+    <div>
+        <form enctype="application/json" method="POST" id="requestinfo">
+            Enter the Form ID you are requesting additional information for: <input type="text" name="form_id">
+            <br>
+            Additional Information:<select name="add_doc">
+                <option value="Presentation Needed">Presentation Needed</option>
+                <option value="Paper Needed">Paper Needed</option>
+            </select>
+            <input type="submit" name="submit" id="formsubmit">
+        </form>
+    </div>
+    <br>
+    <div>
+        Return to view requests <a href="dhviewreq.html"><button>View Requests</button></a>
+    </div>
+    <br>
+    <div>
+        Return to Department Head Menu <a href="dephead.html"><button>Return</button></a>
+    </div>
+    <script type="text/javascript" src="dhreqinfo.js"></script>
+</body>
+</html>

@@ -1,8 +1,6 @@
 package com.revature.test;
 
-import java.sql.SQLException;
-
-import com.revature.daoimpl.LoginDAOImpl;
+import com.revature.util.Functions;
 
 public class TestStuff {
 	public static void main(String[] args) {
@@ -16,13 +14,7 @@ public class TestStuff {
 //		String b = "12";
 //		int a = Integer.parseInt(b);
 //		System.out.println(a);
-		
-		LoginDAOImpl ldi = new LoginDAOImpl();
-		try {
-			System.out.println(ldi.getSupervisorList());
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		Functions f = new Functions();
+		f.addfunding(180);
 	}
 }

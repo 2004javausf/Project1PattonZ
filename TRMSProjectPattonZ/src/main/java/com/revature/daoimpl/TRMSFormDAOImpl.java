@@ -74,7 +74,7 @@ public class TRMSFormDAOImpl implements TRMSFormDAO {
 		Statement stmt = conn.createStatement();
 		ResultSet rs =stmt.executeQuery("SELECT * FROM TRMSFORM WHERE EMP_ID=" + emp_id);
 		while(rs.next()){
-			trmsform = new TRMSForm(rs.getInt(1), rs.getInt(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7), rs.getString(8), rs.getString(9), rs.getInt(10), rs.getString(11), rs.getString(12), rs.getString(13), rs.getString(14), rs.getString(14), rs.getString(16), rs.getString(17), rs.getDouble(18));
+			trmsform = new TRMSForm(rs.getInt(1), rs.getInt(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7), rs.getString(8), rs.getString(9), rs.getInt(10), rs.getString(11), rs.getString(12), rs.getString(13), rs.getString(14), rs.getString(15), rs.getString(16), rs.getString(17), rs.getDouble(18));
 			trmsformlist.add(trmsform);
 		}
 		return trmsformlist;
@@ -97,6 +97,66 @@ public class TRMSFormDAOImpl implements TRMSFormDAO {
 		ps.setInt(1, trmsform.getForm_id());
 		ps.executeUpdate();
 		
+	}
+	@Override
+	public void supappden(TRMSForm trmsform) throws SQLException {
+		Connection conn = cf.getConnection();
+		String sql = "UPDATE TRMSFORM SET SUP_APPDEN=(?) WHERE FORM_ID=(?)";
+		PreparedStatement ps = conn.prepareStatement(sql);
+		ps.setString(1, trmsform.getSup_appden());
+		ps.setInt(2, trmsform.getForm_id());
+		ps.executeUpdate();
+		
+	}
+	@Override
+	public void dhappden(TRMSForm trmsform) throws SQLException {
+		Connection conn = cf.getConnection();
+		String sql = "UPDATE TRMSFORM SET DH_APPDEN=(?) WHERE FORM_ID=(?)";
+		PreparedStatement ps = conn.prepareStatement(sql);
+		ps.setString(1, trmsform.getDh_appden());
+		ps.setInt(2, trmsform.getForm_id());
+		ps.executeUpdate();
+	}
+	@Override
+	public void dhreqinfo(TRMSForm trmsform) throws SQLException {
+		Connection conn = cf.getConnection();
+		String sql = "UPDATE TRMSFORM SET ADD_DOC = (?) WHERE FORM_ID=(?)";
+		PreparedStatement ps = conn.prepareStatement(sql);
+		ps.setString(1, trmsform.getAdd_doc());
+		ps.setInt(2, trmsform.getForm_id());
+		ps.executeUpdate();
+		
+	}
+	@Override
+	public void bcappden(TRMSForm trmsform) throws SQLException {
+		Connection conn = cf.getConnection();
+		String sql = "UPDATE TRMSFORM SET BENCO_APPDEN = (?) WHERE FORM_ID=(?)";
+		PreparedStatement ps = conn.prepareStatement(sql);
+		ps.setString(1, trmsform.getBenco_appden());
+		ps.setInt(2, trmsform.getForm_id());
+		ps.executeUpdate();
+	}
+	@Override
+	public List<TRMSForm> selectFormById(int form_id) throws SQLException {
+		List<TRMSForm> trmsformlist = new ArrayList<TRMSForm>();
+		TRMSForm trmsform = null;
+		Connection conn = cf.getConnection();
+		Statement stmt = conn.createStatement();
+		ResultSet rs =stmt.executeQuery("SELECT * FROM TRMSFORM WHERE FORM_ID=" + form_id);
+		while(rs.next()){
+			trmsform = new TRMSForm(rs.getInt(1), rs.getInt(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7), rs.getString(8), rs.getString(9), rs.getInt(10), rs.getString(11), rs.getString(12), rs.getString(13), rs.getString(14), rs.getString(15), rs.getString(16), rs.getString(17), rs.getDouble(18));
+			trmsformlist.add(trmsform);
+		}
+		return trmsformlist;
+	}
+	@Override
+	public void addreim(int form_id, double reim_amount) throws SQLException {
+		Connection conn = cf.getConnection();
+		String sql = "UPDATE TRMSFORM SET REIM_AMOUNT = (?) WHERE FORM_ID=(?)";
+		PreparedStatement ps = conn.prepareStatement(sql);
+		ps.setDouble(1, reim_amount);
+		ps.setInt(2, form_id);
+		ps.executeUpdate();
 	}
 
 }

@@ -19,5 +19,15 @@ public interface TRMSFormDAO {
 		
 		public void cancelRequest(TRMSForm trmsform) throws SQLException;
 		
-	
+		public void supappden(TRMSForm trmsform) throws SQLException;
+		
+		public void dhappden(TRMSForm trmsform) throws SQLException;
+		
+		public void dhreqinfo(TRMSForm trmsform) throws SQLException;
+		
+		public void bcappden(TRMSForm trmsform) throws SQLException;
+		
+		public List<TRMSForm> selectFormById(int form_id) throws SQLException;
+		
+		public void addreim(int form_id, double reim_amount) throws SQLException;
 }
