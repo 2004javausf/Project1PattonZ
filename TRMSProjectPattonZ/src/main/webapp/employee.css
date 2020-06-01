@@ -1,0 +1,16 @@
+body{
+    background-color: darkorange;
+}
+
+h1.a{
+    color: Gray;
+    border: black;
+}
+
+h2.b{
+    color: purple;
+}
+
+div.empTotal{
+    border: rebeccapurple;
+}
