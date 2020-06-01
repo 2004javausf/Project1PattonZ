@@ -159,4 +159,14 @@
     <servlet-name>AddFundingServlet</servlet-name>
     <url-pattern>/AddFunding</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ViewInfoServlet</display-name>
+    <servlet-name>ViewInfoServlet</servlet-name>
+    <servlet-class>com.revature.servlet.ViewInfoServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ViewInfoServlet</servlet-name>
+    <url-pattern>/ViewInfo</url-pattern>
+  </servlet-mapping>
 </web-app>
